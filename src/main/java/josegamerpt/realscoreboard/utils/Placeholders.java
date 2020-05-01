@@ -1,6 +1,7 @@
 package josegamerpt.realscoreboard.utils;
 
 import josegamerpt.realscoreboard.RealScoreboard;
+import josegamerpt.realscoreboard.nms.NMS;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.Statistic;
@@ -12,7 +13,7 @@ import java.util.Date;
 
 public class Placeholders {
     private static int ping(Player player) {
-        return RealScoreboard.nms.getPing(player);
+        return NMS.getPing(player);
     }
 
     private static String ram() {
@@ -158,7 +159,7 @@ public class Placeholders {
                     .replaceAll("%group%", getGroup(p))
                     .replaceAll("%money%", Text.formatMoney(money(p)))
                     .replaceAll("%displayname%", p.getDisplayName())
-                    .replaceAll("%playtime%", Text.formatTime(stats(p, Statistic.PLAY_ONE_MINUTE) / 20) + "");
+                    .replaceAll("%playtime%", Text.formatTime(stats(p, Statistic.PLAY_ONE_TICK) / 20) + "");
             return placeholderAPI(p, placeholders);
         } catch (Exception ignored) {
         }

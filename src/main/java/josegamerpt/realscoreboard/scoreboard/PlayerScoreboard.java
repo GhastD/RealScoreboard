@@ -116,8 +116,8 @@ public class PlayerScoreboard {
 
         team.setPrefix(prefix);
 
-        if (!team.hasEntry(result.getName()))
-            team.addEntry(result.getName());
+        if (!team.hasPlayer(result))
+            team.addPlayer(result);
 
         if (text.length() > 16) {
             String prefixColor = ChatColor.getLastColors(prefix);

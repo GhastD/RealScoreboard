@@ -123,27 +123,17 @@ public class RealScoreboard extends JavaPlugin {
             return false;
         }
 
-        String compatible = "Your server is compatible with RealScoreboard!";
+        String compatible = "Your server is not compatible with RealScoreboard!";
         switch (versao) {
             case "v1_13_R1":
-                log(compatible);
-                nms = new NMS1_13_R1();
-                break;
             case "v1_13_R2":
-                log(compatible);
-                nms = new NMS1_13_R2();
-                break;
             case "v1_14_R1":
             case "v1_14_R2":
-                log(compatible);
-                nms = new NMS1_14_R1();
-                break;
             case "v1_15_R1":
                 log(compatible);
-                nms = new NMS1_15_R1();
                 break;
             default:
-                //not compatible
+                log("Your server is compatible with RealScoreboard");
                 break;
         }
 
